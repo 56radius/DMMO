@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    <title>Wire Me</title>
     <meta name="author" content="Wire Me / Code-In" />
     <meta
       name="description"
@@ -12,8 +10,11 @@
     />
     <meta name="keywords" content="finance, money, wire-me, ussd" />
 
+    <!-- Title -->
+    <title>DMMO</title>
+
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />	
+    <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
@@ -41,13 +42,20 @@
 
     <!-- css file -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- Preloader Styling -->
+    <!-- Preloader Styling -->
   </head>
 
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="loader"></div>
+      <div class="loader-text">Welcome</div>
+    </div>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo"><a href="index.html"> Wire Me </a></h1>
+        <h1 class="logo"><a href="index.html"> DMMO </a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -344,5 +352,16 @@
 
     <!-- javascript file -->
     <script src="assets/js/main.js"></script>
+    <script>
+      // Wait for the content to load
+      window.addEventListener("load", () => {
+        // After 3 seconds, hide the preloader
+        setTimeout(() => {
+          const preloader = document.getElementById("preloader");
+          preloader.style.opacity = "0";
+          preloader.style.pointerEvents = "none"; // Disable interactions with the preloader
+        }, 2000); // 3000 milliseconds = 3 seconds
+      });
+    </script>
   </body>
 </html>
