@@ -223,7 +223,7 @@
               </p>
 
               <p>
-                The CEO has a message, please click on the green link
+                The CEO has a message,
                 <a href="#" id="open-popup" style="color: green"> Click Me. </a>
                 As you join us in Shining the light of God's goodness and love
                 in the rural areas, the Lord will reward you in Jesus name.
@@ -235,7 +235,10 @@
                 <div class="popup-content">
                   <h2>Join Us</h2>
                   <p>You can donate by:</p>
-                  <p>You can donate by:</p>
+                  <p>1. Drugs or financial assistance</p>
+                  <p>2. Medical equipments</p>
+                  <p>3. Providing maternity home</p>
+                  <p>4. Prooviding clean water, by digging boreholes</p>
                   <button id="close-popup">Close</button>
                 </div>
               </div>
@@ -305,26 +308,35 @@
       </section>
       <!-- End Aims and objectives section -->
 
+      <!-- Gallery section -->
       <section id="ouraims" class="why-us">
         <div class="container">
           <div class="section-title">
             <h2>Gallery</h2>
           </div>
+        </div>
 
-          <div class="slideshow-container">
-            <div class="slide fade">
-              <img src="image1.jpg" alt="Slide 1" />
-            </div>
-            <div class="slide fade">
-              <img src="image2.jpg" alt="Slide 2" />
-            </div>
-            <div class="slide fade">
-              <img src="image3.jpg" alt="Slide 3" />
-            </div>
-
-            <a class="prev" onclick="changeSlide(-1)">Previous</a>
-            <a class="next" onclick="changeSlide(1)">Next</a>
+        <div class="slideshow-container">
+          <div class="slide">
+            <img src="assets/img/galleryone.JPG" alt="Slide 1" />
           </div>
+          <div class="slide">
+            <img src="assets/img/gallerytwo.JPG" alt="Slide 2" />
+          </div>
+          <div class="slide">
+            <img src="assets/img/gallerythree.JPG" alt="Slide 3" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/galleryfour.JPG" alt="Slide 3" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/dmmo.png" alt="Slide 3" />
+          </div>
+
+          <a class="prev" onclick="changeSlide(-1)">Previous</a>
+          <a class="next" onclick="changeSlide(1)">Next</a>
         </div>
       </section>
     </main>
@@ -369,16 +381,19 @@
             <div class="col-lg-4 col-md-6 footer-newsletter">
               <h4>Contact Us</h4>
               <p>Emback on us on this journey</p>
-              <form action="" method="post">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                /><input
-                  style="background-color: red"
-                  type="submit"
-                  value="Subscribe"
-                />
+              <form id="contactForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+
+                <button type="submit">Send Message</button>
               </form>
             </div>
           </div>
@@ -416,5 +431,26 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/popup.js"></script>
+    <script>
+      let slideIndex = 0;
+      showSlide(slideIndex);
+
+      function changeSlide(n) {
+        showSlide((slideIndex += n));
+      }
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".slide");
+
+        if (index >= slides.length) {
+          slideIndex = 0;
+        } else if (index < 0) {
+          slideIndex = slides.length - 1;
+        }
+
+        slides.forEach((slide) => (slide.style.display = "none"));
+        slides[slideIndex].style.display = "block";
+      }
+    </script>
   </body>
 </html>
