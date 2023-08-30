@@ -94,8 +94,11 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+    <section id="hero" class="d-flex align-items-center" data-aos="fade-up">
       <div class="container">
+        <marquee direction="left" scrollamount="3">
+          Please click on the green text in the about section for CEO's message.
+        </marquee>
         <div class="row">
           <div
             class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
@@ -239,6 +242,11 @@
                   <p>2. Medical equipments</p>
                   <p>3. Providing maternity home</p>
                   <p>4. Prooviding clean water, by digging boreholes</p>
+                  <p>5. Providing mobilities to trasnport our equipments</p>
+                  <p>
+                    6. You can assist in providing everything needed for health
+                    education
+                  </p>
                   <button id="close-popup">Close</button>
                 </div>
               </div>
@@ -328,11 +336,23 @@
           </div>
 
           <div class="slide">
-            <img src="assets/img/galleryfour.JPG" alt="Slide 3" />
+            <img src="assets/img/galleryfour.JPG" alt="Slide 4" />
           </div>
 
           <div class="slide">
-            <img src="assets/img/dmmo.png" alt="Slide 3" />
+            <img src="assets/img/galleryfive.JPG" alt="Slide 5" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/gallerysix.JPG" alt="Slide 6" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/galleryseven.JPG" alt="Slide 7" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/galleryeight.JPG" alt="Slide 7" />
           </div>
 
           <a class="prev" onclick="changeSlide(-1)">Previous</a>
@@ -431,26 +451,14 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/popup.js"></script>
+    <script src="assets/js/Slideshow.js"></script>
     <script>
-      let slideIndex = 0;
-      showSlide(slideIndex);
-
-      function changeSlide(n) {
-        showSlide((slideIndex += n));
-      }
-
-      function showSlide(index) {
-        const slides = document.querySelectorAll(".slide");
-
-        if (index >= slides.length) {
-          slideIndex = 0;
-        } else if (index < 0) {
-          slideIndex = slides.length - 1;
-        }
-
-        slides.forEach((slide) => (slide.style.display = "none"));
-        slides[slideIndex].style.display = "block";
-      }
+      // Initialize ScrollReveal
+      ScrollReveal().reveal("[data-aos]", {
+        delay: 200, // Delay before the animation starts (milliseconds)
+        duration: 800, // Duration of the animation (milliseconds)
+        easing: "ease-in-out", // Easing function to use
+      });
     </script>
   </body>
 </html>
